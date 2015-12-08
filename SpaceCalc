@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class SpaceCalc{
+	public static void main(String[] args){
+		Scanner keyboard = new Scanner(System.in);
+		String[] planets = {"Venus", "Mars\t", "Jupiter", "Saturn", "Uranus", "Neptune"};
+		int z=1;
+		float y=0;
+		String planet="";
+		
+		System.out.println("v\nv\nv\nPlease enter your current earth weight: ");
+		float weight=keyboard.nextFloat();
+		
+		System.out.println("\nI have information on the following planets: ");
+		
+		for(int i=0;i<planets.length;i++){
+			System.out.print(z+". "+planets[i]+"\t");z++;
+			if(z==4){System.out.println();}
+		}
+		
+		System.out.println("\n\nWhich planet are you visiting? ");
+		int x=keyboard.nextInt();
+		
+		switch(x){
+			case 1: y=0.78f;planet=planets[x-1];
+					break;
+			case 2: y=.39f;planet=planets[x-1];
+					break;
+			case 3: y=2.65f;planet=planets[x-1];
+					break;
+			case 4: y=1.17f;planet=planets[x-1];
+					break;
+			case 5: y=1.05f;planet=planets[x-1];
+					break;
+			case 6: y=1.23f;planet=planets[x-1];
+					break;
+			default: System.out.println("\nFUCK YOU! ");
+		}
+		
+		float g=Math.round(y*weight*10)/10.0f;
+		System.out.println("\nYou would be "+g+" pounds on the planet "+planet+"\n^\n^\n^");
+	}
+}
